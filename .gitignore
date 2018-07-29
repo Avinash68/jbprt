@@ -1,0 +1,92 @@
+celerybeat.pid
+/cpd_local/media/.*
+myapp/script/newCordinatorRegister.py
+myapp/script/reports/SETusersstatuscheck.py
+myapp/script/reports/module2_MCQreport.py
+cpd_local/static/import_export/
+myapp/script/reports/CPD-R1.py
+/media
+/*.log
+/.idea
+conf/cpd_local.ini
+conf/gunicorn_start.sh
+/media/*
+/cpd_local/media/*
+.pyc
+/*/*.pyc
+#/*/*.pyc
+/kalchachni/
+/myapp/admin.pyc
+*/*/*.pyc
+myapp/script/adddistrict.py
+a.txt
+# Byte-compiled / optimized / DLL files
+*.rdb
+__pycache__/
+*.py[cod]
+*$py.class
+#/media/*
+# C extensions
+*.so
+*.csv
+Documents/
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+
+*.pyc
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+# Django stuff:
+*.log
+*.out
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+.project
+.pydevproject
+*.swp
+*.swo
+*.swn
+# PyCharm
+.idea/
+
