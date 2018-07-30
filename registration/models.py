@@ -4,36 +4,57 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-# Create your models here.
-
-class jobSeeker(models.Model):
+class JobSeeker(models.Model):
     user = models.OneToOneField(User)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default=None)
+    skill_set = models.CharField(max_length=200, default=None)
+    qualification = models.CharField(max_length=200, default=None)
+    other_info = models.CharField(max_length=200, default=None)
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
 
+    def __unicode__(self):
+        return u'%s' % self.name
 
 class Recruiter(models.Model):
     user = models.OneToOneField(User)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default=None)
+    skill_set = models.CharField(max_length=200, default=None)
+    qualification = models.CharField(max_length=200, default=None)
+    company_name = models.CharField(max_length=200, default=None)
+    other_info = models.CharField(max_length=200)
+
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
 
+    def __unicode__(self):
+        return u'%s' % self.name
 
-class jobs(models.Model):
+
+class Jobs(models.Model):
     job_id = models.AutoField(primary_key=True)
-    recruter_id = models.ForeignKey(Recruiter)
-    skillset = models.CharField(max_length=200)
+    recruiter_id = models.ForeignKey(Recruiter)
+    req_skill_set = models.CharField(max_length=200, default=None)
+    jobtitle = models.CharField(max_length=200, default=None)
+    job_description = models.CharField(max_length=200, default=None)
+    req_exp = models.CharField(max_length=200, default=None)
+    company_name = models.CharField(max_length=200, default=None)
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
 
+    def __unicode__(self):
+        return u'%s' % self.job_id
 
-class Job_Application(models.Model):
-    job_id = models.ForeignKey(jobs)
-    jobSeeker = models.ForeignKey(jobSeeker)
+
+class Job_Applications(models.Model):
+    job_id = models.ForeignKey(Jobs)
+    jobSeeker = models.ForeignKey(User)
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
+
+    def __unicode__(self):
+        return u'%s' % self.job_id

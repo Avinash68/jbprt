@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from activity import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-
+    url(r'^addjb/', views.AddJobs),
+    url(r'^swjb/', views.ViewJobs),
+    url(r'^aply/', views.ApplyJobs),
+    url(r'^viewapp/', views.ViewAppln),
+    url(r'^rmjob/', views.RemoveJob),
 ]
